@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>hover 속성을 사용한 메뉴 만들기</title>
+<style>
+	*{margin: 0; padding: 0;}
+	a{text-decoration: none;}
+	li{list-style: none;}
+	.sub{
+		display: none;
+	}
+	li:hover .sub{
+		display: block;
+	}
+	li:hover .menu{
+		background-color: red;
+	}
+	.header{
+		width: 350px;
+		border: 1px solid green;
+		margin: 50px auto;
+	}
+	.nav ul{
+		width: 300px;
+		margin: 20px auto;
+	}
+	.nav li{
+		font-size: 18px;
+		display: inline;
+		margin: 0 3px;
+	}
+	.nav li:hover{
+		background-color: red;
+	}
+</style>
+</head>
+<body>
+	<div class="header">
+		<div class="nav">
+			<ul>
+				<li><a href="#">Menu 1</a></li>
+				<li><a href="#">Menu 2</a></li>
+				<li><a href="#">Menu 3</a></li>
+				<li><a href="#">Menu 4</a></li>
+			</ul>
+		</div>
+	</div>
+	<div>
+		<ul>
+			<li>
+				<a href="#" class="menu">Menu1</a>
+				<ul class="sub">
+					<li><a href="#">sub1</a></li>
+					<li><a href="#">sub2</a></li>
+					<li><a href="#">sub3</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

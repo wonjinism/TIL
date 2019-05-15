@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 
+	table 전체 태그
+	tr	열(세로)
+	td	행(가로) - 데이터 셀
+	th	행(가로) - 제목 셀
+	
+	테이블 외곽선을 나타내는 border 속성
+	
+	colspan : 가로 병합시
+	rowspan : 세로 병합시
+	-->
+	<table border="1">
+		<tr>
+			<td>1x1</td>
+			<td colspan="2">1x2 1x3</td>
+		</tr>
+		<tr>
+			<td>2x1</td>
+			<td>2x2</td>
+			<td rowspan="2">2x3 3x3</td>
+		</tr>
+		<tr>
+			<td>3x1</td>
+			<td>3x2</td>
+		</tr>
+	</table>
+	<br /><br />
+	
+	<table border="1">
+		<tr>
+			<th>알파벳</th>
+			<th>숫자</th>
+		</tr>
+		<tr>
+			<td>A</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>B</td>
+			<td>2</td>
+		</tr>
+	</table>
+	
+	<table border="1">
+	<caption>회원정보</caption>
+	<tr>
+		<th>이름</th>
+		<th>나이</th>
+	</tr>
+	<tr>
+		<td>Simon</td>
+		<td>34</td>
+	</tr>
+	<tr>
+		<td>Sonya</td>
+		<td>28</td>
+	</tr>
+	</table>
+</body>
+</html>

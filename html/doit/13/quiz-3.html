@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSS3 트랜스폼과 트랜지션</title>
+	<style>	
+	.photo {	
+        margin-top:50px;	
+	    margin-left:100px;
+		-moz-transition: all 1s;
+		-ms-transition: all 1s;
+		-o-transition: all 1s;
+		-webkit-transition: all 1s;
+		transition: all 1s;
+	}
+	.photo:hover{
+		-moz-transform: scale(1.5);
+		-ms-transform: scale(1.5);
+		-o-transform: scale(1.5);
+		-webkit-transform: scale(1.5);
+		transform: scale(1.5);
+		-moz-transform-origin: left top;
+		-ms-transform-origin: left top;
+		-o-transform-origin: left top;
+		-webkit-transform-origin: left top;
+		transform-origin: left top;
+		box-shadow: 5px 5px 3px #000;
+	}
+	</style>
+</head>
+<body>
+	<img src="http://www.maybugs.com/news/photo/201803/561889_389717_5931.jpg" class="photo">	
+</body>
+</html>

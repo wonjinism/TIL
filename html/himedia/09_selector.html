@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자의 우선순위</title>
+<style>
+	.box{
+		width: 1000px;
+		background-color: red;
+	}
+	.text{
+		color: white
+	}
+	.reading{
+		color: blue;  
+	}
+	.listening{
+		color: red;
+	}
+	#box p{
+		border: 3px solid black;
+		padding: 5px;
+	}			
+	
+	#book{
+		background-color: gray;
+		padding: 10px;
+	}
+	
+	#book h1{
+		text-align: center;
+	}
+	
+	#book li{
+		color: blue;
+	}
+	
+	#book a{
+		display: block;
+		text-decoration: none;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<!--
+	선택자의 우선순위
+	* 선택자 태그 선택자 < 클라스 선택자 < 아이디 선택자
+	클라스(.) 아이디(#)의 네이밍 방법
+	- 내 마음대로!
+	- 영 소문자로 시작
+	- 영 대소문자 _,- 특수기호와 조합하여 사용
+	- 한글, 공백, 속성명, 태그명 사용 X 
+	-->
+
+	<h1>선택자</h1>
+	<div class="box">
+		<p>토익 리딩</p>
+		<p>토익 리스닝</p>
+		<p class="text">오라클 프로그래밍</p>
+		<p>슈가 크래커</p>
+		<p>알프스 스트롱거</p>
+	</div>
+	<div id="box">
+		<p class="reading">토익 리딩</p>
+		<p class="listening">토익 리스닝</p>
+		<p>오라클 프로그래밍</p>
+		<p>슈가 크래커</p>
+		<p>알프스 스트롱거</p>
+	</div>
+	
+	<div id="book">
+	<h1>2018 베스트 셀러 TOP 10 (6위~10위)</h1>
+		<ol start="6">
+			<li>토익 리딩</li>
+			<li>토익 리스닝</li>
+			<li>오라클 프로그래밍</li>
+			<li>슈가 크래커</li>
+			<li>알프스 스트롱거</li>
+		</ol>
+		<a href="http://www.yes24.com/24/category/bestseller?CategoryNumber=001&sumgb=08" target=_black><span>YES24 바로가기(클릭)</span></a>
+	</div>
+</body>
+</html>

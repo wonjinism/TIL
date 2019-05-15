@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	input[type="button"]{
+		background-color: red;
+	}
+	
+</style>
+</head>
+<body>
+<!--
+	전송방식
+	method 속성 : 전송 방식 지정
+	- get : 보안↓
+	- post : 보안↑ - 주로 사용하는 방식
+	name 속성 - 폼의 이름(ex. 발신인), 구분을 위해 사용
+	action : 데이터를 보낼 주소
+	target : <action>에서 지정한 파일 다른창으로 열기
+	
+	<form> 태그 안에 있는 내용이 한 번에 전달이 되는 내용
+	한 번에 전달하고 싶은 내용은 하나의 폼에 넣어야 한다.
+-->
+	
+	<!-- 라디오 박스 -->
+	<form>
+	<h3>성별 선택</h3>
+	<input type="radio" id="male" name="gender">
+	<label for="male">남성</label>
+	<input type="radio" id="female" name="gender" checked="checked">
+	<label for="female">여성</label>
+	</form>
+	
+	<!-- 셀렉트 박스 -->
+	<form>
+		<select>
+			<option>:선택:</option>
+			<option>서울</option>
+			<option>대전</option>
+			<option>대구</option>
+			<option>부산</option>
+		</select>
+	</form>
+	
+	<!-- 체크 박스 -->
+	<form>
+		<input type="checkbox" id="plan" name="job">
+		<label for="plan">기획자</label>
+		
+		<input type="checkbox" id="dev" name="job" checked="checkded">
+		<label for="dev">개발자</label>
+		
+		<input type="checkbox" id="pub" name="job">
+		<label for="pub">퍼블리셔</label>
+	</form>
+	
+	<!-- 
+		복수행이 지원되는 textarea
+		cols(가로값) 20
+		rows(세로값) 2
+	 -->
+	<form>
+		<textarea cols="30" rows=""></textarea>
+	</form>
+	
+	<!-- 첨부파일 -->
+	<form enctype="multitype/form-data">
+		<input type="file" name="filelink">
+	</form>
+	
+	<!--
+	버튼의 종류 
+	submit : 전송 | reset : 초기화 | button : 기능이 없는 버튼
+	-->
+	
+	<form>
+		<input type="submit" value="전송">
+		<input type="reset" value="초기화">
+		<input type="button" value="버튼">
+	</form>
+</body>
+</html>

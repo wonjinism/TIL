@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 70%;
+            margin: 0 auto;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+        .ouput_wrap{
+            width: 90%;
+            height: 500px;
+            margin: 20px auto;
+            border: 1px solid #000;
+            border-spacing: 5px;
+            table-layout: fixed;
+            text-align: center;
+        }
+        th{
+            border: 1px solid #000;
+            height: 20%;
+        }
+        .output {
+            border: 1px solid #000;
+            height: 20%;
+        }
+        .input_wrap{
+            width: 90%;
+            margin: 0 5% 20px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        var text;
+        $(function(){
+            $('#input_text').keydown(function(key){
+                if(key.keyCode == 13){
+                    var input_text = $('#input_text');
+                    text = input_text.val();            
+                };
+            });
+            $('#btn').on('click', function(){
+                var input_text = $('#input_text');
+                text = input_text.val();
+                // input_text.val('');
+            });
+            $('.output').on('click', function(event){
+                var target = $(event.target);
+                if(target.text() != ""){
+                    $(function(){
+                        target.text('');
+                    });
+                }
+                if(text != undefined){
+                    $(target).text(text);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <table class="ouput_wrap">
+            <tr>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+            </tr>
+            <tr>
+                <td class="output"></td>
+                <td class="output"></td>
+                <td class="output"></td>
+                <td class="output"></td>
+                <td class="output"></td>
+            </tr>
+            <tr>
+                <td class="output"></td>
+                <td class="output"></td>
+                <td class="output"></td>
+                <td class="output"></td>
+                <td class="output"></td>
+            </tr>
+            <tr>
+                <td class="output"></td>
+                <td class="output"></td>
+                <td class="output"></td>
+                <td class="output"></td>
+                <td class="output"></td>
+            </tr>
+            <tr>
+                <td class="output"></td>
+                <td class="output"></td>
+                <td class="output"></td>
+                <td class="output"></td>
+                <td class="output"></td>
+            </tr>
+        </table>
+        <div class="input_wrap">
+            <input id="input_text" type="text" />
+            <button id="btn" class="btn">입력</button>
+        </div>
+    </div>
+</body>
+</html>

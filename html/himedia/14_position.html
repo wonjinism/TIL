@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/*
+	Position 속성
+	1. 정적 포지셔닝 (static position) - 기본값, 사용안함
+	2. 상대 포지셔닝 (relative position)
+	3. 절대 포지셔닝 (absolute position)
+	4. 절대 포지셔닝 - 화면기준 (fixed position)
+*/
+	*{margin: 0; padding: 0;}
+	#wrap{
+		width: 500px;
+		margin: 0 auto;
+		background-color: powderblue;
+	}
+	p{
+		border: 1px solid black;
+	}
+	.po{
+		color: hotpink;
+		background-color: black;
+		position: fixed;
+		top: 20px;
+		left: 20px;
+	}
+</style>
+</head>
+<body>
+
+	<div id="wrap">
+		<p>첫 번째 문장입니다.</p>
+		<p>두 번째 문장입니다.</p>
+		<p class="po">세 번째 문장입니다.</p>
+		<p>네 번째 문장입니다.</p>
+	</div>
+</body>
+</html>

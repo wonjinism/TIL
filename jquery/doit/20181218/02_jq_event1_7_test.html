@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function(){
+            // p 요소 개별적으로 대응
+            $("#box_1").on("mouseout", function(){
+                $("#box_1").css({"background-color" : "yellow"});
+            });
+
+            // p 요소를 감싸고 있는 div 전체에 대응
+            $("#box_2").on("mouseleave", function(){
+                $("#box_2").css("background", "pink");
+            });
+
+            // p 요소를 감싸고 있는 div 전체에 대응
+            $("#box_3").on("mouseenter", function(){
+                $("#box_3").css("background", "aqua");
+            });
+
+            // 문서의 마우스 움직임을 객체 e에 담기
+            $(document).on("mousemove", function(e){ 
+                $(".posX").text(e.pageX);
+                $(".posY").text(e.pageY);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>mousemove</h1>
+    <p>X : <span class="posX">0</span>px</p>
+    <p>Y : <span class="posY">0</span>px</p>
+
+    <h1>mouseout</h1>
+    <div id="box_1">
+        <p><a href="#">내용1</a></p>
+        <p><a href="#">내용2</a></p>
+        <p><a href="#">내용3</a></p>
+    </div>
+    
+    <h1>mouseleave</h1>
+    <div id="box_2">
+        <p><a href="#">내용4</a></p>
+        <p><a href="#">내용5</a></p>
+        <p><a href="#">내용6</a></p>
+    </div>
+
+    <h1>mouseenter</h1>
+    <div id="box_3">
+        <p><a href="#">내용7</a></p>
+        <p><a href="#">내용8</a></p>
+        <p><a href="#">내용9</a></p>
+    </div>
+</body>
+</html>

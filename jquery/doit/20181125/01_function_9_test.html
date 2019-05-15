@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        const num = 150;
+        (function(){}());
+        (function(){
+            let num = 100;
+            function menu(){
+                num += 100;
+                alert(num);
+            }
+            menu();
+        }());
+        
+        (function(){
+            let num = 100;
+            function menu(){
+                alert(num);
+            }
+            menu();
+        }());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

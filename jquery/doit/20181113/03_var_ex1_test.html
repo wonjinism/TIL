@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let box;
+        box = 100;
+        box = 30; // 30이 마지막 값
+        document.write(box);
+        
+        // 문자형
+        const s = "javascript";
+        const num = "100";
+        const tag = "<h1> String </h1>";
+        document.write(tag);
+
+        // 숫자형
+        const s2 = 100; // 문자형에서 선언된 같은 변수 s를 또 사용했더니 에러
+        const t = Number("500"); // java의 캐스팅???
+        const str = "500";
+        const strNum = Number(str);
+
+        // 논리형
+        const s3 = true;
+        const t3 = 10 >= 100; // false;
+        const k = Boolean("hello"); // true
+        // Boolean()은 0과 null, undefined, 빈 문자("")를 제외한 모든 데이터에 대해 true 반환
+        const k2 = Boolean(0) // false
+        const k3 = Boolean("Simon"); // true        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

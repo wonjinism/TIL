@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+    $(function(){
+        $("*").css("border", "1px solid blue"); // 전체 요소 선택자로 두께가 1px인 파란색 실선
+        $("#tit").css("background-color", "#ff0").css("border", "2px solid #f00"); // 아이디 선택자 // 체이닝 기법으로 선택 요소의 css 메소드를 연속해서 2회 적용
+        $(".tit").css("background-color", "#ff0").css("border", "2px dashed #f00"); // 클래스 선택자
+        $("h4").css("background-color", "#0ff").css("border", "2px dashed #f00"); // 요소 선택자
+        $("#tit, h1").css("color", "red"); // 그룹 선택자
+        $("h3.tit").css("color", "aqua"); // 종속 선택자
+    });
+    </script>
+</head>
+<body>
+    <h1>jQuery</h1>
+    <h2 id="tit">ID selector</h2>
+    <h3 class="tit">Class selector</h3>
+    <h4>Element selector</h4>
+</body>
+</html>

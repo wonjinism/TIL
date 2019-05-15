@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        const tv = new Object();
+        tv.color = "white";
+        tv.price = 300000;
+        tv.info = function(){
+            document.write("tv color : " + this.color, "<br />");
+            document.write("tv price : " + this.price, "<br />");
+        }
+
+        const car = {
+            color : "black",
+            price : 5000000,
+            info: function(){
+                document.write("car color : " + this.color, "<br />");
+                document.write("car price : " + this.price, "<br />");
+            }
+        }
+
+        document.write("<h1>calling the method of tv object</h1>");
+        tv.info();
+        document.write("<h1>calling the method of car object</h1>");
+        car.info();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

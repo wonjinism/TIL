@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        const info = navigator.userAgent.toLowerCase(); // 운영체제 정보 (소문자 변환)
+        let osImg = null;
+
+        if(info.indexOf('windows') >= 0){
+            osImg="http://files.idg.co.kr/itworld/image/2018/03/windows-10-logo-2-100739281-large.jpg";
+        }else if(info.indexOf('macintosh') >= 0){
+            osImg= "https://content.gnoss.com/imagenes/Documentos/imgsem/8b/8b0f/8b0fd3af-27bb-4209-a29a-6fe3d861941d/82e7a1d7-7865-85ec-3487-a0dac81fa392.jpg";
+        }else if(info.indexOf('iphone') >= 0){
+            osImg="https://9to5mac.com/wp-content/uploads/sites/6/2017/09/iphone-81.jpg?quality=82&strip=all&w=1500";
+        }else if(info.indexOf('android') >= 0){
+            osImg="https://www.android.com/static/2016/img/home/holiday-hero/android-9-pie_m.png";
+        }
+
+        document.write("<img src='" + osImg + "' /><br />");
+        const scr = screen;
+        const sc_w = scr.width;
+        const sc_h = scr.height;
+
+        document.write("Monitor Resolution Width: " + sc_w + "px <br />");
+        document.write("Monitor Resolution Height: " + sc_h + "px <br />");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

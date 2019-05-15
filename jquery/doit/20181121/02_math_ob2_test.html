@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        document.write("<h1>Rock-scissors-paper Game!!</h1>");
+
+        let gameNum = prompt("Choose Yours! (1. Rock / 2. Scissors / 3. Paper");
+        if(gameNum < 1 || gameNum > 3){
+            alert("Wrongly selected. Enter Only a Number!");
+            location.reload();
+        }
+        switch (gameNum) {
+            case 1: comImg = "https://tosurai.com/wp-content/uploads/t0002.png"
+                break;
+            case 2: comImg = "https://tosurai.com/wp-content/uploads/t0003.png"
+                break;
+            case 3: comImg = "https://tosurai.com/wp-content/uploads/t0004.png"
+                break;
+            default:
+                break;
+        }
+        
+        let com = Math.ceil(Math.random() * 3); // +3 함으로서 1~3사이의 난수가 발생
+        let comImg;
+        switch (com) {
+            case 1: comImg = "https://tosurai.com/wp-content/uploads/t0002.png"
+                break;
+            case 2: comImg = "https://tosurai.com/wp-content/uploads/t0003.png"
+                break;
+            case 3: comImg = "https://tosurai.com/wp-content/uploads/t0004.png"
+                break;
+            default:
+                break;
+        }
+        document.write("<img src='" + comImg + "'\'><br />");
+        if ((gameNum == 1 && com == 3) ||
+            (gameNum == 2 && com == 1) ||
+            (gameNum == 3 && com == 2)) {
+                document.write("<h1>You won this game!</h1>");
+        } else{
+            alert("You did not win.. Please try again.");
+            location.reload();
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        const a = 10;
+        const b = 20;
+        const m = 30;
+        const n = 40;
+
+        let result;
+        result = a > b || b >= m || m > n; // false, false, false
+        document.write(result, "<br />"); // false
+
+        result = a > b || b >= m || m <= n; // false, false, true
+        document.write(result, "<br />"); // true
+
+        result = a <= b && b >= m && m <= n; // true, false, true
+        document.write(result, "<br />"); // false
+
+        result = a <= b && b <= m && m <= n; // true, true, true
+        document.write(result, "<br />"); // true
+
+        result = !(a>b);
+        document.write(result, "<br />");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

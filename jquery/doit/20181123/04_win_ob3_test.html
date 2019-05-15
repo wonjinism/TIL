@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let addNum = 0;
+        const auto= setTimeout(function(){
+            console.log("addNum : " + ++addNum);
+        }, 3000);
+    </script>
+</head>
+<body>
+    <h1>Timeout Num Test</h1>
+    <button onclick="clearTimeout(auto)">Stop to add</button> <!-- 실행되기 전에 버튼을 누르면 증가하지 않음 -->
+</body>
+</html>

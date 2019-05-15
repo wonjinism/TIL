@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        const today = new Date();
+        const nowMonth = today.getMonth(),
+            nowDate = today.getDate(); // 쉼표 사용하면 const 쓰지 않고 여러 변수 생성
+        const nowDay = today.getDay();
+        let nowDayString;
+        switch (nowDay) {
+            case 1: nowDayString = "Monday";
+                break;
+            case 2: nowDayString = "Tuesday";
+                break;
+            case 3: nowDayString = "Wednsday";
+                break;
+            case 4: nowDayString = "Thursday";
+                break;
+            case 5: nowDayString = "Friday";
+                break;
+            case 6: nowDayString = "Saturday";
+                break;
+            case 7: nowDayString = "Sunday";
+                break;
+            default:                
+        }
+        document.write("<h1>Today's date</h1>");
+        document.write("Month: " + (nowMonth + 1), "<br />");
+        document.write("Date: " + nowDate, "<br />");
+        document.write("Day: " + nowDayString, "<br />");
+
+
+        const worldcup = new Date(2002, 4, 31);
+        const theMonth = worldcup.getMonth();
+        const theDate = worldcup.getDate();
+        const theDay = worldcup.getDay();
+        let theDayString;
+
+        switch (nowDay) {
+            case 1: theDayString = "Monday";
+                break;
+            case 2: theDayString = "Tuesday";
+                break;
+            case 3: theDayString = "Wednsday";
+                break;
+            case 4: theDayString = "Thursday";
+                break;
+            case 5: theDayString = "Friday";
+                break;
+            case 6: theDayString = "Saturday";
+                break;
+            case 7: theDayString = "Sunday";
+                break;
+            default:                
+        }
+        document.write("<h1>The Date of World Cup</h1>");
+        document.write("The month of 2002 FIFA World Cup: " + (theMonth + 1), "<br />");
+        document.write("The date of 2002 FIFA World Cup: " + theDate, "<br />");
+        document.write("The day of 2002 FIFA World Cup: " + theDayString, "<br />");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

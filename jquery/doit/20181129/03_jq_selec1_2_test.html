@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+    $(function(){
+        $("#wrap").css("border", "1px solid blue").css("padding", "10px"); // 직접 선택자 #wrap
+        // 부모 요소 선택자
+        $("h2").parent().css("border", "1px solid #f00"); // h2의 부모 요소인 #inner_wrap
+        $("#sub_list_1").parent().css("border", "2px dashed #f00"); // #sub_list_1의 상위 ul
+        
+        // 하위 요소 선택자
+        $("h2").next().css("border", "1px solid green");  // h2의 다음 동일 레벨 요소 p
+        $("#wrap h1").css({"background-color":"yellow", "border":"2px dashed #f100"}); // #wrap 하위의 모든 h1 요소
+
+        // 자식 요소 선택자
+        $("#wrap > section").children() // wrap의 인접 관계인 section의 자식 요소만 선택
+        .css({"background-color":"blue", "border":"3px solid #f00"});
+
+        // 형(이전) / 동생(다음) 요소 선택자
+        $(".prevTest").css({"border":"3px solid red", "margin":"10px", "padding":"30px"}) // 직접 선택
+        $(".prevTest h1").prev().css({"color":"blue"}) // 직접 > 하위 > 형
+        $(".prevTest h1").next().css({"color":"red"}) // 직접 > 하위 > 동생
+
+        // 전체 형(이전) / 전체 동생(다음) 요소 선택자
+        $(".prevTest h1").prevAll().css({"border":"1px dashed blue", "padding":"10px"}) // 직접 > 하위 > 형 전체
+        $(".prevTest h1").nextAll().css({"border":"1px dashed black", "padding":"10px"}) // 직접 > 하위 > 동생 전체
+
+        // 전체 형제 요소 선택자
+        $(".prevTest h1").siblings().css("font-style", "italic") // 직접 > 하위 > 형 전체
+        
+        // 범위 제한 전체 형 / 동생 요소 선택자
+        $("#wrap_until").css("border", "2px dashed blue") // 직접
+        $("#wrap_until > .text").prevUntil(".except").css({"color":"blue"}) // 직접 > 인접 > 범위 제한 전체 형
+        $("#wrap_until > .text").nextUntil(".except").css({"color":"red"}) // 직접 > 인접 > 범위 제한 전체 동생
+
+        // 상위 요소 선택자
+        $(".prevTest").parents().prev().css("color", "blue") // 직접 > 상위 > 형
+        $(".prevTest").parents("div").css({"border":"1px dashed blue", "padding":"30px"}) // 직접 > 상위 선택 > 형
+        
+        // 가장 가까운 상위 요소 선택자
+        $(".prevTest").closest("div").css("padding","0px") // 직접 > 가장 가까운 상위
+    });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h1>jQuery 완독!</h1>
+        <h2> 가즈아ㅏㅏㅏㅏㅏㅏㅏ</h2>
+        <div id="inner_wrap">
+            <h1>Title 1</h1>
+            <h2>Title 2</h2>
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+            <p>Paragraph 3</p>
+            <section class="prevTest">
+                    <p>Oldest brother</p>
+                    <p>Older brother</p>
+                    <h1>Me!</h1>
+                    <p>Younger brother</p>
+                    <p>Youngest borther</P>
+            </section>
+        </div>
+        <section>
+            <h1>Child Element!</h1>
+            <p>Child Contents</p>
+        </section>
+    </div>
+    <ul id="ul_wrap">
+        <li>List 1
+            <ul>
+                <li id="sub_list_1">sub-list 1</li>
+                <li>sub-list 2</li> 
+                <li>sub-list 3</li> 
+            </ul>
+        </li>
+        <li>List 2</li>
+        <li>List 3</li>
+    </ul>
+    <div id="wrap_until">
+        <h1 class="title"></h1>
+        <p class="except">oldest bro! except me blue</p>
+        <p>older bro</p>
+        <p class="text">from here!! always except me</p>
+        <p>younger bro</p>
+        <p class="except">youngest bro! except me red</p>
+    </div>
+</body>
+</html>

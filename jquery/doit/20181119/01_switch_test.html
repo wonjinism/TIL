@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        const browser = prompt("Select a browser to download (1. Chrome / 2. Explorer / 3. Safari)"); // 문자열 데이터의 줄바꿈시 \를 넣어주면 오류 발생하지 않음.
+        let url;
+        switch (browser) {
+            case "1": url = "https://www.google.com/intl/ko_ALL/chrome/"
+                break;
+            case "2": url = "https://support.microsoft.com/ko-kr/help/17621/internet-explorer-downloads"
+                break;
+            case "3": url = "https://safari.ko.softonic.com/"
+                break;
+            default: alert("Please select again.");
+                location.reload(); // 브라우저 새로 고침해서 로직 다시 돌림.
+        }
+        if(url) location.href = url;
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

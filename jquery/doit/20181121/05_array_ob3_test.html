@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        const arrKTX = [ "Seoul", "Daejeon", "Daegu", "Busan" ];
+        const arrSRT = [ "Suseo", "Osong", "Gwanju" ];
+
+        arrKTX.splice(2, 1, "Gyeonju", "Ulsan"); // 2번 index부터 1개의 값을 삭제하고 그 사이에 값 추가
+        console.log(arrKTX);
+
+        console.log(arrSRT);
+        const data1 = arrSRT.pop(); // 마지막 index의 값을 잘라내서 반환
+        console.log(data1); // 광주
+        console.log(arrSRT);
+        const data2 = arrSRT.shift(); // 첫 index의 값을 잘라내서 반환
+        console.log(data2); // 수서
+        console.log(arrSRT);
+        
+        arrSRT.push("Jeju"); // 배열 끝에 값 추가
+        console.log(arrSRT);
+        
+        arrSRT.unshift("Pyeongyang"); // 배열 맨 앞에 값 추가
+        console.log(arrSRT);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

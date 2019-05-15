@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .blue{ color: #00f;}
+        .red{ color: #f00;}
+    </style>
+    <script>
+        //100까지 2의 배수이면서, 6의 배수일 경우 i값을 출력하고 총합계를 도출
+        // 4의 배수에도 해당되는 수는 blue, 그 외의 수는 red
+        let i = 0;
+        let total = 0;
+        while(i < 100){
+            i++;
+            if(i % 2 == 0 && i % 6 == 0){
+                if (i % 4 == 0){
+                    document.write("<p class = 'blue'>" + i + "</p>");
+                } else {
+                    document.write("<p class = 'red'>" + i + "</p>");
+                }
+                total += i;
+            }
+        }
+        document.write("<p>총합계 : " + total + "</p>");
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

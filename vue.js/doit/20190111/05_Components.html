@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Global and Local Components</title>
+</head>
+<body>
+    <div id="app1">
+        <button>컴포넌트 등록 1</button>
+        <my-global-component></my-global-component>
+        <my-local-component></my-local-component>
+    </div>
+    <hr>
+    <div id="app2">
+        <button>컴포넌트 등록 2</button>
+        <my-global-component></my-global-component>
+        <!-- #app1에만 선언된 components 객체를 불러와도 렌더링 되지 않음. -->
+        <my-local-component></my-local-component> 
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.js"></script>
+    <script>
+        // 전역 컴포넌트 등록
+        Vue.component('my-global-component', {
+            template: '<div>전역 컴포넌트 입니다.</div>'
+        });
+        
+        // 지역 컴포넌트 내용
+        var cmp = {
+            template: '<div>지역 컴포넌트 입니다.</div>'
+        };
+
+        new Vue({
+            el: '#app1',
+            // 지역 컴포넌트 등록
+            components: {
+            'my-local-component': cmp
+            }
+        });
+
+        new Vue({
+            el: '#app2',
+        });
+    </script>
+</body>
+</html>

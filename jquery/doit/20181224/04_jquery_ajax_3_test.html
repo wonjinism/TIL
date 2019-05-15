@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        // XML 데이터를 표로 만들어 내기
+        $(function(){
+            $.ajax({
+                url: "js/dataset.xml",
+                dataType: "xml",
+                success: function(data){
+                    // xml에서 find() 메서드를 사용해 얻어낸 <record> 객체를 참조
+                    var $data = $(data).find("record"); 
+                    if($data.length > 0){
+                        const tb = $("<table />");
+                        $.each($data, function(i, o){
+                            const $id = $(o).find("id").text();
+                            const $first_name = $(o).find("first_name").text();
+                            const $last_name = $(o).find("last_name").text();
+                            const $email = $(o).find("email").text();
+                            const $gender = $(o).find("gender").text();
+
+                            const row = $("<tr />").append(
+                                $("<td />").text($id),
+                                $("<td />").text($first_name),
+                                $("<td />").text($last_name),
+                                $("<td />").text($email),
+                                $("<td />").text($gender)
+                            );
+                            tb.append(row);
+                        });
+                        $(".wrap").append(tb);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap"></div>
+</body>
+</html>

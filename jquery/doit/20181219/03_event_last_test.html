@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function(){
+            let fontSize = 14;
+            $(".zoom_in").on("click", function(){
+                fontSize++;
+                $(".text").css("font-size", fontSize+"px");
+                $(".text_size").text(fontSize + "px");
+            });
+            $(".zoom_out").on("click", function(){
+                fontSize--;
+                $(".text").css("font-size", fontSize+"px");
+                $(".text_size").text(fontSize + "px");
+            });
+            $(".original").on("click", function(){
+                fontSize = 14;
+                $(".text").css("font-size", fontSize+"px");
+                $(".text_size").text(fontSize + "px");
+            });
+
+            // let fontSize = 14;
+            // $(".button_wrap button").on("click", zoomInOut);
+            // function zoomInOut(){
+            //     if($(this).hasClass("zoom_out")){
+            //         if(fontSize<=8) return false;
+            //         fontSize--;
+            //     }else if($(this).hasClass("zoom_in")){
+            //         if(fontSize>=20) return false;
+            //         fontSize++;
+            //     }else{
+            //         fontSize = 14;
+            //     }
+            //     $(".text_size").text(fontSize + "px");
+            //     $("body").css({fontSize : fontSize + "px"});
+            // }
+        });
+    </script>
+</head>
+<body>
+    <div class="button_wrap">
+        <button class="zoom_out">-</button>
+        <button class="original">100%</button>
+        <button class="zoom_in">+</button>
+    </div>
+    <div class="text_wrap">
+        <p class="text_size">14px</p>
+        <pre class="text">
+그룹 이벤트 등록 메서드의 종류
+    on() : 이벤트 대상 요소에 2개 이상의 이벤트를 등록. 사용 방식에 따라 이벤트를 등록한 이후에 동적으로 생성되거나 복제된 요소에도 이벤트가 적용
+    bind() : 이벤트 대상 요소에 2개 이상의 이벤트를 등록
+    delegate() : 선택한 요소의 하위 요소에 이벤트를 등록. 이벤트를 등록한 이후에도 동적으로 생성되거나 복제된 요소에도 이벤트가 적용
+    one() : 이벤트 대상 요소에 1개 이상의 이벤트를 등록. 지정한 이벤트가 1회 발생하고 자동으로 해제
+        </pre>
+    </div>
+</body>
+</html>

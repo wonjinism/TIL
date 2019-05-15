@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Instance Lifecycle</title>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: "Hello Vue.js!"
+            },
+            beforeCreate: function() {
+                console.log("beforeCreate");
+                console.log("=================================")
+            },
+            created: function(){
+                console.log("created");
+                console.log("=================================")
+            },
+            mounted: function(){
+                console.log("mounted");
+                console.log("=================================")
+                console.log("> message 저장값 : " + this.message); 
+                console.log("> 렌더링 값 : " + document.querySelector("#app").textContent.trim()); 
+                console.log("=================================")
+                this.message = "Hello Vue!";
+                console.log("message 값 변경");
+                console.log("=================================")
+                console.log("> message 저장값 : " + this.message); 
+                console.log("> 렌더링 값 : " + document.querySelector("#app").textContent.trim()); 
+                console.log("=================================")
+            },
+            updated: function(){
+                console.log("updated");
+                console.log("=================================")
+                console.log("> message 저장값 : " + this.message); 
+                console.log("> 렌더링 값 : " + document.querySelector("#app").textContent.trim()); 
+                console.log("=================================")
+            }
+        });
+    </script>
+</body>
+</html>

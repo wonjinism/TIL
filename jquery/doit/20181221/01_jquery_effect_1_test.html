@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function(){
+            $(".btn2").hide();
+
+            $(".btn1").on("click", function(){
+                $(".box").slideUp(1000, "linear", function(){
+                    $(".btn1").hide();
+                    $(".btn2").show();
+                });
+            });
+
+            $(".btn2").on("click", function(){
+                $(".box").fadeIn(1000, "swing", function(){
+                    $(".btn1").show();
+                    $(".btn2").hide();
+                });
+            });
+
+            $(".btn3").on("click", function(){
+                $(".box").slideToggle(1000, "linear");
+            });
+            
+            // 투명도를 변경
+            $(".btn4").on("click", function(){
+                $(".box").fadeTo("fast", 0.3);
+            });
+            $(".btn5").on("click", function(){
+                $(".box").fadeTo("fast", 1);
+            });
+        });
+    </script>
+    <style>
+        .content{
+            width: 400px;
+            background-color: #eee;
+        }        
+    </style>
+</head>
+<body>
+    <p>
+        <button class="btn1">slideUp</button>
+        <button class="btn2">fadeIn</button>
+    </p>
+    <p>
+        <button class="btn3">toggleSlide</button>
+    </p>
+    <p>
+        <button class="btn4">fadeTo(0.3)</button>
+        <button class="btn5">fadeTo(1)</button>
+    </p>
+    <div class="box">
+        <div class="content">
+                누구든지 체포 또는 구속을 당한 때에는 적부의 심사를 법원에 청구할 권리를 가진다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다.
+
+                법관은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니하며, 징계처분에 의하지 아니하고는 정직·감봉 기타 불리한 처분을 받지 아니한다.만료 70일 내지 40일전에 후임자를 선거한다. 신체장애자 및 질병·노령 기타의 사유로 생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.
+                
+                국무총리는 대통령을 보좌하며, 행정에 관하여 대통령의 명을 받아 행정각부를 통할한다. 형사피고인은 유죄의 판결이 확정될 때까지는 무죄로 추정된다.
+                
+                대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다. 헌법에 의하여 체결·공포된 조약과 일반적으로 승인된 국제법규는 국내법과 같은 효력을 가진다.
+                
+                대한민국의 국민이 되는 요건은 법률로 정한다. 공무원인 근로자는 법률이 정하는 자에 한하여 단결권·단체교섭권 및 단체행동권을 가진다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다.
+        </div>
+    </div>
+</body>
+</html>

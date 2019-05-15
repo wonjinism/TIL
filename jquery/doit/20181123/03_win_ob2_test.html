@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let addNum = 0;
+        let subNum = 1000; 
+
+        const auto_1 = setInterval(function(){
+            console.log("addNum : " + ++addNum);
+        }, 1000);
+        const auto_2 = setInterval(function(){
+            console.log("subNum : " + --subNum);
+        }, 1000);
+    </script>
+</head>
+<body>
+    <h1>Interval Num Test</h1>
+    <button onclick="clearInterval(auto_1)">Stop to add</button>
+    <button onclick="clearInterval(auto_2)">Stop to sub</button>
+</body>
+</html>

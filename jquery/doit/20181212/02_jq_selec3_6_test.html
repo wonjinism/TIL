@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function(){
+            // 수치 조작 메서드
+            const w1 = $("#p1").width();
+            console.log(w1); // 100
+
+            const w2 = $("#p1").innerWidth(); // padding(좌우 각 20px 총 40px) 포함
+            console.log(w2); // 140
+
+            const w3 = $("#p1").outerWidth(); // padding + border(좌우 각 5px 총 10px) 두께
+            console.log(w3); // 150
+            
+            // border와 padding 값이 얼마인지 몰라도 합계값이 원하는 값이 되도록 순 너비와 높이의 값을 조정해줌.
+            $("#p2").outerWidth(300).outerHeight(300);
+        });
+    </script>
+<style>
+    *{padding: 0;}
+    #p1, #p2{
+        width: 100px;
+        height: 50px;
+        padding:20px;
+        border: 5px solid #000;
+        background-color: #ff0;
+    }
+</style>
+</head>
+<body>
+    <h1>수치 조작 메서드</h1>
+    <p id="p1">내용1</p>
+    <p id="p2">내용2</p>
+</body>
+</html>

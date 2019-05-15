@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        const a = true;
+        const b = false;
+        const c = 10 > 5; // true
+        const d = Boolean(null); // false
+
+        document.write(a, "<br />");
+        document.write(b, "<br />");
+        document.write(c, "<br />");
+        document.write(d, "<br />");
+
+        // null & undefined 데이터
+
+        /* 
+        let은 선언하고 나중에 값을 할당이 가능하지만
+        const 선언과 동시에 값을 할당 해야한다.
+        */
+        // const s; // undefined
+        let t = "hello"; // quotation 없이는 변수 선언 안됨.
+        t = null; // 최종값 null
+
+        console.log(typeof t); // object
+        t = "Hello";
+        console.log(typeof t); // string
+        t = 100;
+        console.log(typeof t); // number
+        t = 100 > 10;
+        console.log(typeof t); // boolean
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

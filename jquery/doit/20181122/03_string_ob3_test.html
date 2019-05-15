@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        const userEmail = prompt("Please let us your email address.", "");
+        const arrUrl = [ ".co.kr", ".com", ".net", ".or.kr", ".go.kr" ];
+
+        let check1 = false;
+        let check2 = false;
+
+        if (userEmail.indexOf("@") > 0) {check1 = true}; // @가 있는 인덱스 반환해서 0과 비교
+        for (let i = 0; i < arrUrl.length; i++){
+            if(userEmail.indexOf(arrUrl[i]) > 0){
+                check2 = true;
+            }
+        }
+
+        if (check1 && check2){
+            document.write(userEmail);
+        } else{
+            alert("Wrong email! Please check it.");
+            location.reload();
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

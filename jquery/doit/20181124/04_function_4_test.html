@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        const rightId = "oracle";
+        const rightPw = "oracle";
+
+        function login(id, pw){
+            if(id == rightId){
+                if(pw == rightPw){
+                    document.write("Welcome " + id + " to Hello World!");
+                } else{
+                    alert("Wrong password! Please check it.");
+                }
+            }else{
+                alert("wrong ID! Please check it.");
+            }
+        }
+
+        const userId = prompt("Your ID?");
+        const userPw = prompt("Your password?");
+        
+        login(userId, userPw);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

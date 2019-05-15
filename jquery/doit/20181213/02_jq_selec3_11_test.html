@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function(){
+            // clone() / remove() / empty()
+            const copyObj = $(".box1").children().clone(); // class box1의 자식 요소를 복사
+            $(".box2").remove();
+            $(".box3").empty();
+            $(".box3").append(copyObj);
+
+            // replaceAll() / replaceWith()
+            $(".box1 p:eq(0)").replaceWith("<h1>내용 1</h1>");
+            $("<h2>내용2</h2>").replaceAll(".box1 p:eq(0)"); // 위에서 p:eq(0)을 이미 바꾸어 버려서 p:eq(1)이 p:eq(0)이 되어 버림.
+
+            // unwrap() / wrap() / wrapAll(0 / wrapInner()
+            $("strong").unwrap(); // strong 요소를 감싸고 있는 h1 요소를 제거
+            $(".ct1").wrap("<h3 />"); // .ct1을 <h3> 요소로 하나씩 감싸기
+            $(".ct2").wrapAll("<strong />"); // strong으로 한 번에 감싸기
+            $("li").wrapInner("<h1 />"); // 모든 li 내부에 <h1>으로 하나씩 감싸기
+        });
+    </script>
+</head>
+<body>
+    <div class="box1">
+        <p>내용1</p>
+        <p>내용2</p>
+    </div>
+    <div class="box2">
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+    <div class="box3">
+        <p>내용5</p>
+        <p>내용6</p>
+    </div>
+
+    <h1 id="tit_1">
+        <strong>객체 조작 및 생성</strong>
+    </h1>
+    <p class="ct1">내용1</p>
+    <p class="ct1">내용2</p>
+    <p class="ct2">내용3</p>
+    <p class="ct2">내용4</p>
+    <ul>
+        <li>내용3</li>
+        <li>내용4</li>
+    </ul>
+</body>
+</html>

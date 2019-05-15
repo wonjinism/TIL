@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function(){
+            $(window).on("scroll", function(){
+                const sc_top = $(this).scrollTop();
+                const sc_left = $(this).scrollLeft();
+            
+                $(".top").text(sc_top);
+                $(".left").text(sc_left);
+            });
+        });
+    </script>
+    <style>
+        body{
+            height:10000px;
+            width:5000px;
+        }
+        #wrap{
+            position: fixed;
+            left: 10px; top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <p>scrollTop: <span class="top">0</span>px</p>
+        <p>scrollLeft: <span class="left">0</span>px</p>
+    </div>  
+</body>
+</html>

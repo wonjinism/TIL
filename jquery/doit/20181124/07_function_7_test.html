@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let num = 0;
+        function testFunction(){
+            num++;
+            document.write(num, "<br />");
+            if(num == 10) return;
+
+            testFunction();
+        }
+
+        testFunction();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

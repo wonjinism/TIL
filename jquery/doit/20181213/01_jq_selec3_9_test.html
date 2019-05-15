@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function(){
+            // after() / insertAfter()
+            $("#wrap p:eq(2)").after("<p>After</p>");
+            $("<p>insertAfter</p>").insertAfter("#wrap p:eq(1)");
+
+            // before() / insertBefore()
+            $("#wrap p:eq(1)").before("<p>before</p>");
+            $("<p>insertBefore</p>").insertBefore("#wrap p:eq(0)");
+
+            // append() // appendTo()
+            $("#wrap").append("<p>내용 4</p>");
+            $("<p>내용 5</p>").appendTo("#wrap");
+
+            // prepend() // prependTo()
+            $("#wrap").prepend("<p>내용 0</p>");
+            $("<p>내용 -1</p>").prependTo("#wrap");
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p>내용 1</p>
+        <p>내용 2</p>
+        <p>내용 3</p>
+    </div>
+</body>
+</html>

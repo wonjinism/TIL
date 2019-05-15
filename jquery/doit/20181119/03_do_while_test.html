@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        const num = 10;
+        let question = true;
+        let count = 0;
+        let answerNum;
+        alert("Let me begin a game!");
+        do{ // true / false에 상관 없이 일단 한 번은 실행
+            answerNum = prompt("What is the number I have?");
+            if (num == answerNum) question = false
+            else if(num > answerNum) alert("Wrong answer! but it is smaller.")
+            else if(num < answerNum) alert("Wrong answer! but it is bigger.");
+            count++;
+        } while(question)
+        if (count < 2){
+            document.write("Wow, you won it at once!")
+        } else{
+            document.write("You won it after " + count + "times.")
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function chColor(){
+            const arrColor = [ "#ff0", "#6c0", "#fcf", "#cf0", "#39f" ];
+            const arrNum = Math.round(Math.random() * arrColor.length);
+            const bodyTag = document.getElementById("theBody");
+            bodyTag.style.backgroundColor = arrColor[arrNum];
+        }
+    </script>
+</head>
+<body id="theBody">
+    <button onclick="chColor()">BG Color Change</button>
+</body>
+</html>

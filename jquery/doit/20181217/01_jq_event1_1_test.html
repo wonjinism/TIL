@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function(){
+            $(".btn1").click(function(){
+                // .btn1의 부모인 p 다음의 <p>내용1</p>의 css를 변경
+                $(".btn1").parent().next().css({"color" : "#f00"});
+            });
+
+            $(".btn2").on({
+                "mouseover focus" : function(){
+                    $(".btn2").parent().next().css({"color" : "#0f0"});
+                },
+                "mouseout blur" : function(){
+                    $(".btn2").parent().next().css({"color" : "#000"});
+                }
+            });
+
+            $(".btn3").click(function(){
+                $(".btn3").parent().next().css({"color" : "#f00"});
+            });
+
+            // 강제로 이벤트 발생 시키기
+            $(".btn1").click();
+            $(".btn2").trigger("mouseover");
+
+            // 이벤트 제거 메서드
+            $(".btn3").off("click");
+            $(".btn2").off("mouseover focus");
+        });
+    </script>
+</head>
+<body>
+    <p>
+    <button class="btn1">버튼1</button>
+    </p>
+    <p>내용1</p>
+    <p>
+    <button class="btn2">버튼2</button>
+    </p>
+    <p>내용2</p>
+    <p>
+    <button class="btn3">버튼3</button>
+    </p>
+    <p>내용3</p>
+</body>
+</html>

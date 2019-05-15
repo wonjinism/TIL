@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function CheckWeight(name, height, weight){
+            this.userName = name;
+            this.userheight = height;
+            this.userWeight = weight;
+            this.minWeight;
+            this.maxWeight;
+        }
+    
+        CheckWeight.prototype.getInfo = function(){
+            let str = "";
+            str += "Name: " + this.userName + ", ";
+            str += "Height: " + this.userHeight + ", ";
+            str += "Weight: " + this.userWeight + "<br />";
+            return str;
+        }
+        
+        CheckWeight.prototype.getResult = function(){
+            this.minWeight = (this.userHeight - 100) * 0.9 - 5;
+            this.maxWeight = (this.userHeight - 100) * 0.9 + 5;
+
+            if (this.userWeight >= this.minWeight && this.userWeight <= this.maxWeight){
+                return "You have a normal weight.";
+            }else if(this. userWeight < this.minWeight){
+                return "You have a low weight. <br />";
+            }else {
+                return "You have a overweight. <br />";
+            }
+        }
+
+        const simon = new CheckWeight("Simon", 180, 72);
+        const sonya = new CheckWeight("Sonya", 167, 53);
+        console.log(simon);
+        console.log(sonya);
+
+        document.write(simon.getInfo());
+        document.write(simon.getResult());
+        document.write(sonya.getInfo());
+        document.write(sonya.getResult());
+
+        document.write(simon.getResult === sonya.getResult);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

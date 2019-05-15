@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let name = prompt("お名前は？");
+        if(name){ // name에 ""가 들어가면 아무 것도 출력되지 않음.
+            const walkAmount = prompt(name + "は毎日何歩を歩きますか。");
+            const walkLike = confirm(name + "は歩くことが好きですか。");
+            
+            if(walkAmount >= 10000){
+                document.write("とても良い習慣をお持ちですね！", "<br />");
+            } else if (walkAmount < 1000){
+                document.write("危ないよ。運動しましょう！");
+            } else{
+                document.write("もっと歩けばいいです。", "<br />");
+            }
+            if(walkLike){ // 걷는 것 좋아하면
+                document.write("歩くことが好きで健康にいいでしょう。", "<br />");
+            }else{ // 좋아하지 않는다면
+                document.write("きれいなとかハンサムなとか人と一緒に歩けばいいじゃないですか。", "<br />")
+            }
+        } else{ // 오류 뱉어내고 예외처리
+            alert("名前を入力しなおしてください。")
+            location.reload(); // 브라우저 새로 고침
+        }
+        document.write("========= The End ========="
+        );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

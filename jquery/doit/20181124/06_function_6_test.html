@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let num = 1;
+        function gallery(direct){
+            if(direct){
+                if(num == 8) return;
+                num++;
+            }else{
+                if(num == 1) return;
+                num--;
+            }
+
+            const imgTag = document.getElementById("photo");
+            imgTag.setAttribute("src", "https://tosurai.com/wp-content/uploads/t000" + num + ".png");
+        }
+    </script>
+</head>
+<body>
+    <div id="galleryZone">
+        <p><img src="https://tosurai.com/wp-content/uploads/t0001.png" id="photo" alt=""></p>
+        <p>
+            <button onclick="gallery(0)">Prev</button>
+            <button onclick="gallery(1)">Next</button>
+        </p>
+    </div>
+</body>
+</html>

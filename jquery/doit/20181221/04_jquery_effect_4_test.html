@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function(){
+            $(".txt1")
+            .animate({marginLeft: "200px"}, 1000)
+            .animate({marginTop: "200px"}, 1000)
+            // queue에 함수 추가
+            .queue(function(){
+                $(this).css({background: "red"});
+                $(this).dequeue(); // dequeue() 추가 안하면 queue() 이후 함수는 적용 안됨.
+            })
+            .animate({marginLeft: 0}, 1000)
+            .animate({marginTop: 0}, 1000);
+        });
+    </script>
+    <style>
+        *{margin:0;}
+        .txt1{width:50px;text-align: 
+        center;background-color: aqua;}
+    </style>
+</head>
+<body>
+    <p class="txt1">내용1</p>
+</body>
+</html>

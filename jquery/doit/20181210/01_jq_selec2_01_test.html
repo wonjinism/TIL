@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function(){
+            // first/last 선택자
+            $("#menu li:first").css({"background-color":"#ff0"});
+            $("#menu li:last").css({"background-color":"#0ff"});
+            // even/odd 선택자
+            $("#menu2 li:odd").css({"background-color":"#ff0"});
+            $("#menu2 li:even").css({"background-color":"#0ff"});
+            // eq(index)/lt(index)/gt(index) 탐색 선택자
+            $("#menu3 li:eq(2)").css({"background-color":"#ff0"}); // aqua
+            $("#menu3 li:lt(2)").css({"background-color":"#0ff"}); // yellow
+            $("#menu3 li:gt(2)").css({"background-color":"#f0f"}); // pink
+        });
+    </script>
+</head>
+<body>
+    <h1>Filtering(탐색 선택자)</h1>
+    <ul id="menu">
+        <li>contents 1</li>
+        <li>contents 2</li>
+        <li>contents 3</li>
+        <li>contents 4</li>
+    </ul>
+    <ul id="menu2">
+        <li>contents 1</li>
+        <li>contents 2</li>
+        <li>contents 3</li>
+        <li>contents 4</li>
+    </ul>
+    <ul id="menu3"> 
+        <li>contents 1</li>
+        <li>contents 2</li>
+        <li>contents 3</li>
+        <li>contents 4</li>
+        <li>contents 5</li>
+    </ul>
+</body>
+</html>

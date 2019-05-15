@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function(){
+            $(document).on("keydown", keyEventFnc);
+            function keyEventFnc(e){
+                var direct = "";
+                switch (e.keyCode) {
+                    case 37:
+                        direct = "LEFT";
+                        break;
+                    case 38:
+                        direct = "TOP";
+                        break;
+                    case 39:
+                        direct = "RIGHT";
+                        break;
+                    case 40:
+                        direct = "BOTTOM";
+                        break;
+                }
+                if (direct) $("#user_id").val(direct); // direct가 true???? ""이 아니면???
+            }
+        });
+    </script>
+</head>
+<body>
+    <p><input type="text" name="user_id" id="user_id"></p>
+</body>
+</html>

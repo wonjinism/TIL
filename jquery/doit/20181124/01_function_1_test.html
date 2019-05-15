@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let count = 0;
+
+        myFunction(); // 먼저 호출했지만 함수를 호이스팅으로 끌어올려 호출
+
+        function myFunction(){ // 일반 함수 정의
+            count++;
+            document.write("Hello " + count, "<br />");
+        }
+
+        myFunction(); // 두 번째 호출
+
+        const theFunction = function(){ // 익명 함수 선언 참조
+            count++;
+            document.write("Bye " + count, "<br />");
+        }
+
+        theFunction();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

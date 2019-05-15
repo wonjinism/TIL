@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function TestScore(name, kor, eng){
+            this.userName = name;
+            this.korNum = kor;
+            this.engNum = eng;
+        }
+
+        TestScore.prototype.getTestInfo = function(){
+            document.write("Name: " + this.userName + "<br />");
+            document.write("Korean: " + this.korNum + "<br />");
+            document.write("English: " + this.engNum + "<br />");
+        }
+
+        TestScore.prototype.getAvg = function(){
+            const total = this.korNum + this.engNum;
+            const count = 2;
+            return total / count;
+        }
+
+        const simon = new TestScore("Simon", 80, 90);
+        const sonya = new TestScore("Sonya", 100, 80);
+
+        simon.getTestInfo();
+        document.write("Average Score: " + simon.getAvg() + "<br /><br />");
+
+        sonya.getTestInfo();
+        document.write("Average Score: " + sonya.getAvg() + "<br />");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

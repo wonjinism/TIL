@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function testAvg(arrData){
+            let sum = 0;
+            for (let i = 0; i < arrData.length; i++) {
+                sum += Number(prompt("What is your score of " + arrData[i] + "?", "0"));
+            }
+
+            const avg = sum / arrData.length;
+            return avg
+        }
+
+        const arrSubject = [ "Linguistics", "Mathmatics", "Software Engineering" ];
+        const result = testAvg(arrSubject);
+
+        document.write("Your average score is " + Math.round(result) + ".");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        const a = new Array();
+        a[0] = 30;
+        a[1] = "Hello Javascript!";
+        a[2] = true;
+        document.write("<h1>For statement 1</h1>");
+        a.forEach(a => {
+            document.write(a + "<br />");
+        });
+        document.write("<br />");
+
+        document.write("<h1>For statement 2</h1>");
+        const b = new Array(30, "Hello Javascript!", true);
+        for (let i = 0; i < b.length; i++) {
+            document.write(b[i] + "<br />");
+        }
+        document.write("<br />");
+
+        document.write("<h1>For statement 3</h1>");
+        const c = [30, "Hello Javascript!", true];
+        for (i in a) {
+            document.write(a[i] + "<br />");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

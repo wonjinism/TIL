@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        const color = [ "white", "yellow", "aqua", "purple" ];
+
+        let i = 0;
+        function changeColor(){
+            i++;
+            if (i >= color.length){
+                i = 0;
+            }
+
+            const bodyTag = document.getElementById("theBody"); // 해당 id 값을 가진 문서 객체를 리턴
+            bodyTag.style.backgroundColor = color[i];
+        }
+    </script>
+</head>
+<body id="theBody">
+    <button onclick="changeColor();">Change the background color</button>
+</body>
+</html>

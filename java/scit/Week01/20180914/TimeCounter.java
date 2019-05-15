@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class TimeCounter
+{
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		int unitMin = 60;
+		int	unitHour = 3600;
+		int inputSec;
+		int outputHour;
+		int outputMin;
+		int outputSec;
+		
+		System.out.println("시간을 초 단위로 입력하세요.");
+		inputSec = input.nextInt();
+		outputHour = inputSec / unitHour;
+		outputMin = (inputSec % unitHour) / unitMin;
+		outputSec = inputSec - (outputHour * unitHour + outputMin * unitMin);
+		System.out.println(inputSec + "초는 " + outputHour + "시간 " + outputMin + "분 " + outputSec + "입니다.");
+	}
+}

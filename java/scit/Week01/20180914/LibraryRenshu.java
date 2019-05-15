@@ -1,0 +1,22 @@
+class LibraryRenshu 
+{
+	public static void main(String[] args) 
+	{
+		int libDiameter = 22; // 도서관 지름
+		double pi = 3.14; // 원주율
+		int caseWidth = 2; // 책장의 너비
+		int singleShelfCount = 14; // 책장 하나의 선반 수
+		int singleShelfBookCount = 70; // 선반 하나에 들어가는 책 권수
+
+		double libSize = libDiameter * pi; // 도서관 둘레
+		double totalCaseCount = libSize / caseWidth; // 최대 책장의 수
+
+		System.out.println(totalCaseCount); // 소수점 날리기 이전의 책장 수
+
+		int totalShelfCount = singleShelfCount * (int)totalCaseCount; 
+		int totalBookCount = singleShelfBookCount * totalShelfCount;
+
+		System.out.println("책장 갯수 : " + (int)totalCaseCount);
+		System.out.println("전체 도서의 수 : " + (int)totalBookCount);
+	}
+}

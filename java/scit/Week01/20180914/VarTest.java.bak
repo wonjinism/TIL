@@ -1,0 +1,16 @@
+import java.util.Scanner;
+class VarTest
+{
+	public static void main(String[] args) 
+	{
+		Scanner input = new Scanner(System.in); // 나의 시스템에 들어가는 입력에 해당하는 신호를 스캐너에 준다는 의미
+		int num;
+		boolean result;
+
+		System.out.println("정수입력 : ");
+		num = input.nextInt(); // 이 부분에 컴퓨터가 인식하면, 정수형의 숫자를 입력하고 엔터치면 엔터를 인식해서 찍힌 숫자를 출력.
+		result = num > 0; 
+		System.out.println("num의 값 : " + num);
+		System.out.println("result의 값 : " + result);
+	}
+}

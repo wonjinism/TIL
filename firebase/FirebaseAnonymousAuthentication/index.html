@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Firebase Anonymous Authentication</title>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+
+</head>
+<body>
+    <div id="message">
+        <h1>Anonymous Login</h1>
+        <p>I know you're there, I just don't know who you are.</p>
+        <ul>
+            <li>
+                <a id="btnLogin" href="#">Login Anonymously</a>
+            </li>
+            <li>
+                <a id="btnLogout" href="#" class="hide">Logout</a>
+            </li>
+        </ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

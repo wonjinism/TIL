@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 처리 SQL -->
+<mapper namespace="kr.kfc.kiosk.DAO.OrderMapper">
+	<select id="getCustomer_seq" resultType="int">
+		select customer_seq.nextval from dual	
+	</select>
+
+	<insert id="insertOrderList" parameterType="map">
+		INSERT INTO order_list (
+			customer_seq
+			, menu_seq
+			, quantity
+		) VALUES (
+			#{customer_seq}
+			, #{menu_seq}
+			, #{quantity}
+		)
+	</insert>
+	
+	<insert id="makeOrder">
+	</insert>
+</mapper>

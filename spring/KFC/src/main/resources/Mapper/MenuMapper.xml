@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 처리 SQL -->
+<mapper namespace="kr.kfc.kiosk.DAO.MenuMapper">
+	<select id="selectMenuList" resultType="Menu">
+		SELECT
+			menu_seq
+		    , menu_type
+		    , menu_name
+		    , menu_description
+		    , original_price
+		    , promotion_price
+		    , promotion_type
+		    , release_date
+		    , image
+	    FROM
+	    	menu_info
+	    <if test="#{value} != null">
+	    WHERE 
+	    	menu_name LIKE '%' ||#{value}|| '%'
+	    </if>
+	</select>
+	<select id="totalCount" resultType="int" parameterType="String">
+		SELECT
+			COUNT(menu_seq)
+		FROM
+			menu_info
+		<if test="#{value} != null">
+	    WHERE 
+	    	menu_name LIKE '%' ||#{value}|| '%'
+	    </if>
+	</select>
+	
+	<insert id="insertMenu" parameterType="Menu">
+		INSERT INTO
+			menu_info (
+				menu_seq
+			    , menu_type
+			    , menu_name
+			    , menu_description
+			    , original_price
+			    , promotion_price
+			    , promotion_type
+			    , release_date
+			    , image
+			) VALUES (
+				menu_seq.NEXTVAL
+    			, #{menu_type}
+				, #{menu_name}
+				, #{menu_description}
+				, #{original_price}				
+				, #{promotion_price}
+				, #{promotion_type}
+    			, SYSDATE
+    			, #{image}
+			)
+	</insert>
+	
+	<select id="selectMenu" parameterType="int" resultType="Menu">
+		SELECT
+			menu_seq
+		    , menu_type
+		    , menu_name
+		    , menu_description
+		    , original_price
+		    , promotion_price
+		    , promotion_type
+		    , release_date
+		    , image
+	    FROM
+	    	menu_info
+    	WHERE
+    		menu_seq = #{menu_seq}
+	</select>	
+
+	<update id="updateMenu" parameterType="Menu">
+		UPDATE menu_info
+		SET
+			promotion_price = #{promotion_price}
+		    , promotion_type = #{promotion_type}
+    	WHERE
+    		menu_seq = #{menu_seq}
+	</update>
+	
+	<delete id="deleteMenu" parameterType="int">
+		DELETE menu_info
+		WHERE
+			menu_seq = #{menu_seq}
+	</delete>
+
+</mapper>

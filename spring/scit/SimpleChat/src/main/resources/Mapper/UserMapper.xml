@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 처리 SQL -->
+<mapper namespace="io.zerone.simplechat.DAO.UserMapper">
+
+	<insert id="insertUser" parameterType="User">
+		INSERT INTO user_info (
+			USER_SEQ
+			, USER_ID
+			, USER_PASSWORD
+			, USER_REGDATE
+			, USER_LEVEL
+		) VALUES (
+			 user_seq.nextval
+			, #{user_id}
+			, #{user_password}
+			, SYSDATE
+			, 1
+		)
+	</insert>
+	
+	<select id="selectUser" parameterType="User" resultType="User">
+		SELECT
+			USER_ID
+			, USER_PASSWORD
+			, USER_REGDATE 
+		FROM
+			USER_INFO
+		WHERE
+			USER_ID = #{user_id}
+	</select>
+
+</mapper>

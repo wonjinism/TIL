@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 처리 SQL -->
+<mapper namespace="io.zerone.moneydiary.DAO.TransactionMapper">
+	<insert id="insertTransaction" parameterType="Transaction">
+		insert into AccountBook(
+			accountseq
+			, id
+			, title
+			, content
+			, flag
+			, amount
+			, eventdate
+			, indate
+		) values (
+			accountSeq.nextval
+			, #{id}
+			, #{title}
+			, #{content}
+			, #{flag}
+			, #{amount}
+			, #{eventDate}
+			, sysdate
+		)
+	</insert>
+	
+	<select id="selectTransaction" parameterType="int" resultType="Transaction">
+		select
+			accountSeq
+			, id
+			, title
+			, content
+			, flag
+			, amount
+			, to_char(eventdate, 'YYYY/MM/DD') as "eventDate"
+		from AccountBook
+		where accountseq = #{value}
+	</select>	
+
+	<select id="selectTransactionList" resultType="Transaction">
+		select
+			accountSeq
+			, id
+			, title
+			, content
+			, flag
+			, amount
+			, to_char(eventdate, 'YYYY-MM-DD') as "eventDate"
+		from AccountBook
+		order by accountSeq desc, eventdate desc 
+	</select>
+	
+	<delete id="deleteTransaction" parameterType="int">
+		delete from AccountBook
+		where accountSeq = #{value}
+	</delete>
+</mapper>

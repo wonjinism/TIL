@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="io.zerone.simplechat.VO.User" alias="User" />
+		<typeAlias type="io.zerone.simplechat.VO.Room" alias="Room" />
+		<typeAlias type="io.zerone.simplechat.VO.Chat" alias="Chat" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="Mapper/ChatMapper.xml" />
+		<mapper resource="Mapper/UserMapper.xml" />
+	</mappers>
+</configuration>

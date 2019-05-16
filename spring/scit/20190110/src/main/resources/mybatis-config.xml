@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="io.zerone.myapp0110.VO.Member" alias="Member" />
+		<typeAlias type="io.zerone.myapp0110.VO.Board" alias="Board" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="Mapper/MemberMapper.xml" />
+		<mapper resource="Mapper/BoardMapper.xml" />
+	</mappers>
+</configuration>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="global.sesoc.test.dao.BookReviewMapper">
+	<insert id="reviewWrite" parameterType="BookReview">
+		insert into bookreview (
+			seq
+			, name
+			, regdate
+			, review
+		) values (
+			bookreview_seq.nextval
+			, #{name}
+			, sysdate
+			, #{review}
+		)
+	</insert>
+	<select id="reviewList" resultType="BookReview" parameterType="String">
+		select
+			seq
+			, name
+			, to_char(regdate, 'YYYY/MM/DD') as "regdate"
+			, review
+		from bookreview
+		<if test="search != null">
+			where name like '%'||#{search}||'%'
+			or
+			review like '%'||#{search}||'%'
+		</if>
+		order by seq desc
+	</select>
+	<delete id="reviewDelete" parameterType="int">
+		delete from bookreview
+		where seq = #{value}
+	</delete>
+</mapper>

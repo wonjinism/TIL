@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="kr.kfc.kiosk.VO.Menu" alias="Menu" />
+		<typeAlias type="kr.kfc.kiosk.VO.Menu" alias="Order" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="Mapper/MenuMapper.xml" />
+		<mapper resource="Mapper/OrderMapper.xml" />
+		<mapper resource="Mapper/AdminMapper.xml" />
+	</mappers>
+</configuration>

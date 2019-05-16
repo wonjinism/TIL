@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="io.zerone.moneydiary.VO.Account" alias="Account" />
+		<typeAlias type="io.zerone.moneydiary.VO.Transaction" alias="Transaction" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="Mapper/AccountMapper.xml" />
+		<mapper resource="Mapper/TransactionMapper.xml" />
+	</mappers>
+</configuration>

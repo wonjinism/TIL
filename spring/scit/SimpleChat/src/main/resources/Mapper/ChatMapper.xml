@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 처리 SQL -->
+<mapper namespace="io.zerone.simplechat.DAO.ChatMapper">
+	<select id="selectRoomList" resultType="Room">
+		select 
+			room_seq
+			, user_id
+			, name
+			, indate
+			, user_count
+		from
+			room
+		order by
+			user_count, indate
+	</select>
+	
+	<insert id="insertRoom" parameterType="Room">
+		insert into room (
+			room_seq
+    		, user_id
+			, NAME
+			, indate
+		) values (
+			room_seq.nextval
+			, #{user_id}
+			, #{name}
+			, sysdate
+		)
+		<selectKey keyProperty="room_seq" resultType="int" order="AFTER">
+			select room_seq.currval
+			from dual
+		</selectKey>
+	</insert>
+	
+	<select id="selectRoom" parameterType="int" resultType="Room">
+		select
+			room_seq
+    		, user_id
+			, NAME
+			, indate
+		from 
+			room
+		where room_seq = ${value}
+	</select>
+	
+	<insert id="insertChat" parameterType="Chat">
+		insert into chat (
+			chat_seq
+			, room_seq
+			, user_id
+			, message
+			, indate		 
+		) values (
+			chat_seq.nextval
+			, #{room_seq}
+			, #{user_id}
+			, #{message}
+			, sysdate		
+		)
+	</insert>
+	
+	<select id="selectChatList" parameterType="int" resultType="Chat">
+		select 
+			chat_seq
+			, room_seq
+			, user_id
+			, message
+			, indate
+		from
+			chat
+		where
+			room_seq = #{room_seq}
+		order by 
+			indate desc			
+	</select>
+
+</mapper>

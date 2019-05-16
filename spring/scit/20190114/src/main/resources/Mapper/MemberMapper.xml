@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 처리 SQL -->
+<mapper namespace="io.zerone.myapp0114.DAO.MemberMapper">
+	<insert id="insertMember" parameterType="Member">
+		insert into memberinfo
+		(
+			id
+			, pw
+			, name
+			, phone
+			, email
+			, birthdate
+		) values (
+			#{id}
+			, #{pw}
+			, #{name}
+			, #{phone}
+			, #{email}
+			, #{birthdate} 
+		)
+	</insert>
+	<select id="loginMember" parameterType="Member" resultType="Member">
+		select 
+			id
+			, pw
+			, name
+			, phone
+			, email
+			, birthdate 
+		from
+			memberinfo
+		where
+			id = #{id}
+			and
+			pw = #{pw}
+	</select>
+</mapper>

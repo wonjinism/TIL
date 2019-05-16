@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 처리 SQL -->
+<mapper namespace="io.zerone.myapp0110.DAO.BoardMapper">
+	<insert id="insertBoard" parameterType="Board">
+		insert into boardinfo (
+			boardseq
+			, id
+			, boardtitle
+			, boardcontent
+			, hitcount
+			, indate
+		) values(
+			boardseq.nextval
+			, #{id}
+			, #{boardtitle}
+			, #{boardcontent}
+			, #{hitcount}
+			, sysdate
+		)
+	</insert>
+	<select id="selectBoardList" resultType="Board">
+		select 
+			boardseq
+			, id
+			, boardtitle
+			, boardcontent
+			, hitcount
+			, indate
+		from
+			boardinfo
+		order by
+			indate
+	</select>
+	
+	<update id="increaseHitcount" parameterType="String">
+		update boardinfo
+			set
+				hitcount = hitcount + 1
+			where boardseq = #{boardseq}
+	</update>
+	
+	<select id="selectBoard" parameterType="String" resultType="Board">
+		select 
+			boardseq
+			, id
+			, boardtitle
+			, boardcontent
+			, hitcount
+			, indate
+		from
+			boardinfo
+		where
+			boardseq = #{boardseq}
+	</select>
+	
+	<update id="updateBoard" parameterType="Board">
+		update boardinfo
+			set
+				boardtitle = #{boardtitle},
+				boardcontent = #{boardcontent}
+			where
+				boardseq = #{boardseq}
+				and
+				id = #{id}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="String">
+		delete from boardinfo
+			where
+				boardseq = #{boardseq}
+	</delete>
+</mapper>

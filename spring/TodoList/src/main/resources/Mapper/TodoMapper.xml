@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 처리 SQL -->
+<mapper namespace="io.zerone.todolist.DAO.TodoMapper">
+	<insert id="insertTodo" parameterType="Todo">
+		insert into todo(
+			id
+			, title
+			, name
+			, seq
+			, type
+			, regdate
+		) values(
+			todoSeq.nextval
+			, #{title}
+			, #{name}
+			, #{seq}
+			, 'TODO'
+			, sysdate
+		)
+	</insert>
+	
+	<select id="selectTodoList" resultType="Todo">
+		select 
+			id
+			, title
+			, name
+			, seq
+			, type
+			, TO_CHAR(regdate, 'YYYY.MM.DD') as "regdate"
+		from
+			todo
+		order by
+			seq asc, id desc
+	</select>
+	
+	<update id="updateTodo" parameterType="Todo">
+		update todo
+	   <trim prefix="SET" suffixOverrides=",">
+	      <if test='type == "TODO"'>type = 'DOING',</if>
+	      <if test='type == "DOING"'>type = 'DONE',</if>
+	      <if test='type == "DONE"'>type = 'REMOVE',</if>
+	   </trim>
+  		where id = ${id}
+	</update>
+	
+<!--
+	<if test='userId.equals("hong")'>  (O)
+    <if test='userId == "hong"'>  (O)
+    <if test="userId == 'hong'">  (Error)
+    <if tset='userId == "h"'>  (O)
+    <if test="'hong'.equals(userId)">  (O)
+    <if test="'h'.equals(userId)'>  (X)
+    <if test="userId.equals('h')">  (X)
+    <if test="userId == 'hong'.toString()>  (O)
+    <if test="userId eq 'hong'.toString()>  (O)
+    <if test="userId.equalsIgnoreCase('hong')">  (O)
+    <if test="userId.equalsIgnoreCase('h')">  (O)
+    <if test="'h'.equalsIgnoreCase(userId)">  (Error)
+ -->
+
+</mapper>

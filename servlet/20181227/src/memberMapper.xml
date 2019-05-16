@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 회원정보 처리 SQL -->
+<mapper namespace="DAO.MemberMapper">
+	<insert id="insertMember" parameterType="VO.Member">
+		insert into userinfo(username, password)
+		values(#{username}, #{password})
+	</insert>
+	
+	<select id="loginMember" parameterType="VO.Member" resultType="VO.Member">
+		select username, password from userinfo
+		where username = #{username} and password = #{password}
+	</select>
+	
+	<insert id="insertBoard" parameterType="VO.Board">
+		insert into userboard
+		(
+			username
+			, message
+		)
+		values(
+			#{username}
+			, #{message}
+		)
+	</insert>
+	
+	<select id="selectBoard" resultType="VO.Board">
+		select 
+			username
+			, message
+		from
+			userboard
+	</select>
+	
+	<delete id="deleteBoard" parameterType="VO.Board">
+		delete userboard
+		where username = #{username} and 
+	</delete>
+</mapper>

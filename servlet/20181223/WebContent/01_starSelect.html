@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Servlet Practice</title>
+<script>
+	function myFunction(){
+		var select = document.myForm.star.value;
+		if(select == "select"){
+			alert("선택하세요!");
+			return;
+		}
+		document.myForm.submit();
+	}
+</script>
+</head>
+<body>
+	<form action="select" method="get" name="myForm" id="myForm">
+		<select name="star" id="mySelect" onchange="myFunction()">
+			<option value="select" selected="selected">-선택-</option>
+			<option value="iu">아이유</option>
+			<option value="ha">현아</option>
+			<option value="kth">김태희</option>
+		</select>
+	</form>
+</body>
+</html>

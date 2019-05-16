@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>	
+	<title>bean o`clock</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/parallax.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="js/jquery.parallax-scroll.min.js"></script>
+	<script>
+		$(function(){
+			$(".icon img").hover(function(){
+				$(this).attr("src", $(this).attr("src").replace(".png", "_over.png"));
+			}, function(){
+				$(this).attr("src", $(this).attr("src").replace("_over.png", ".png"));
+			});
+		
+			// parallax-scroll 플러그인 실행 및 옵션 추가
+			$(".bg-holder").parallaxScroll({
+				// 0~1 소수 0이면 배경 이미지가 콘텐츠를 따라 스크롤 되고, 1이면 배경이 완전히 고정되어 콘텐츠만 스크롤
+				friction: 0.3
+			});
+
+			// 브라우저 창의 크기를 조절했을 때 내용 전체가 브라우저 창의 너비와 높이에 맞게 표시
+			$(window).resize(function(){
+				// 현재 창의 너비와 높이 값을 알아내서 .container의 너비와 높이 값으로 지정
+				$(".container").width($(window).width()).height($(window).height());
+				// 알아낸 너비와 높이 값을 사용해 .content 내용의 위치를 지정
+				$(".content").each(function(){
+					$(this).css("margin-left",($(this).width()/2*-1)+"px")
+					.css("margin-top", ($(this).height()/2*-1)+"px");
+				});
+			});
+			
+			// 첫 접속 시 브라우저 사이즈 체크
+			setTimeout(function(){$(window).resize()}, 0);
+
+			$(".scroll").click(function(e){
+				e.preventDefault();
+				// animate(height, speed) 메서드로 지정한 시간 동안 현재 hash의 top 오프셋 값
+				// (맨 위에서부터 섹션까지의 오프셋 값)을 스크롤했을 때의 위치값으로 변경
+				$("html, body").animate({scrollTop:$(this.hash).offset().top}, 500);
+			});
+		});
+	</script>
+</head>
+<body>
+	<nav id="navi">
+		<h1><a href="#"><img src="images/logo.jpg"></a></h1>
+		<ul class="main-nav">
+			<li><a href="#ms1" class="scroll">Link 1</a></li>
+			<li><a href="#ms2" class="scroll">Link 2</a></li>
+			<li><a href="#ms3" class="scroll">Link 3</a></li>
+		</ul>
+	</nav>
+	<div id="wrap">
+		<div id="ms1" class="container bg-holder" data-width="1200" data-height="730">
+			<section class="content">
+				<h3>It's bean o'clock</h3>
+				<p>더치커피와 원두커피 전문 쇼핑몰 빈어클락입니다.
+				<div class="icon"><img src="images/icon_view.png"></div>
+				</p>
+			</section>
+		</div>
+		<div id="ms2" class="container bg-holder" data-width="1200" data-height="730">
+			<section class="content">
+				<h3>Cold brewed coffee</h3>
+				<p>믿을 수 있는 고품질의 더치커피를 찾으신다면<br />
+				지금 바로 주문하세요!
+				<div class="icon"><img src="images/icon_order.png"></div>
+				</p>
+			</section>
+		</div>
+		<div id="ms3" class="container bg-holder" data-width="1200" data-height="730">
+			<section class="content">
+				<h3>Roasted bean</h3>
+				<p>주문 후 로스팅한 신선한 원두를<br />
+				만나보고 싶다면 지금 바로 주문하세요!
+				<div class="icon"><img src="images/icon_order.png"></div>
+				</p>
+			</section>
+		</div>
+	</div>
+</body>
+</html>

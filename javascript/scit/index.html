@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+	function myFunction() {
+		alert("!!");
+	}
+
+	function myFunction2(num) {
+		alert(num);
+	}
+
+	function myFunction3() {
+		var val = document.getElementById("myName").value;
+		alert(val);
+	}
+
+	function myFunction4() {
+		var val = document.getElementById("myText").value = "버튼 누르기 완료!"
+	}
+
+	function myFunction5() {
+		var val = document.getElementById("myText2").value;
+		if (val == "") {
+			alert("빈칸이 존재합니다.");
+			document.getElementById("myText2").value = "여기에 입력해 주세요!";
+		}
+	}
+
+	var num = 51;
+	function myFunction6() {
+		var val = document.getElementById("myText6").value;
+		val = Number(val);
+		val = String(val);
+		val = Number(val);
+		if (val === 51) {
+			alert("축하합니다. 숫자를 맞추셨습니다.");
+		} else if (val > num) {
+			alert("정답보다 입력하신 값이 큽니다.");
+		} else if (val < num) {
+			alert("정답보다 입력하신 값이 작습니다.")
+		}
+	}
+
+	var myNum1, myNum2;
+	function inputValue() {
+		myNum1 = Number(document.getElementById("myNum1").value);
+		myNum2 = Number(document.getElementById("myNum2").value);
+	}
+	function add() {
+		inputValue();
+		alert(myNum1 + myNum2);
+	}
+	function subtract() {
+		inputValue();
+		alert(myNum1 - myNum2);
+	}
+	function multiply() {
+		inputValue();
+		alert(myNum1 * myNum2);
+	}
+	function divide() {
+		inputValue();
+		alert(myNum1 / myNum2);
+	}
+</script>
+</head>
+<body>
+	<!--
+http://localhost:8888/js-study/logic?myName=james&myAddress=seoul
+서버에서 logic을 받아줄 로직이 없으면 404 에러를 뱉어낸다. 
+-->
+	<button onclick="myFunction()">버튼</button>
+	<button onclick="myFunction2(100)">버튼2</button>
+	<form action="logic">
+		<input type="text" name="myName" value="이름" /> 
+		<input type="text" name="myAddress" value="주소" /> 
+		<input type="submit" value="서버에 보내기" />
+	</form>
+
+	<br />
+	<input type="text" id="myName">
+	<br />
+	<button onclick="myFunction3()">테스트</button>
+	<br />
+	<br />
+	<input type="text" id="myText">
+	<br />
+	<button onclick="myFunction4()">테스트2</button>
+	<br />
+	<br />
+	<input type="text" id="myText2">
+	<br />
+	<button onclick="myFunction5()">테스트3</button>
+	<br />
+	<br /> 1~100까지 숫자를 입력해주세요.
+	<br />
+	<input type="text" id="myText6">
+	<br />
+	<button onclick="myFunction6()">숫자맞추기</button>
+	<br />
+	<br /> 첫 번째 숫자:
+	<input type="text" id="myNum1">
+	<br /> 두 번째 숫자:
+	<input type="text" id="myNum2">
+	<br />
+	<button onclick="add()">덧셈</button>
+	<button onclick="subtract()">뺄셈</button>
+	<button onclick="multiply()">곱셈</button>
+	<button onclick="divide()">나눗셈</button>
+	<br />
+</body>
+</html>

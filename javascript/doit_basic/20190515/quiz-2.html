@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>연습문제 2</title>
+</head>
+<body>
+	<script>
+		var num1 = Number(prompt('첫 번째 숫자'));
+		var num2 = Number(prompt('두 번째 숫자'));
+
+		function findBigger(a, b) {
+			if(a > b){
+				alert(a + '(이)가 ' + b + '보다 큽니다.');
+			} else if (a < b) {
+				alert(b + '(이)가 ' + a + '보다 큽니다.');
+			} else {
+				alert(a + '와 ' + b + '의 값이 같습니다.');
+			}
+		}
+
+		findBigger(num1, num2);
+	</script>
+</body>
+</html>

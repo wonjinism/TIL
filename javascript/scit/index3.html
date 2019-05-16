@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+	<!--
+	function myFunction(){
+		alert("버튼 누름");
+	}
+	function myFunction2(){
+		var val = document.getElementById("myText2").value;
+		alert(val);
+	}
+	-->
+ 	function myFunction3(){
+		var id = document.getElementById("id").value;
+		var pw = document.getElementById("pw").value;
+		var email = document.getElementById("email").value;
+		var phone = document.getElementById("phone").value;
+		if(id == "" || pw == "" || email == "" || phone == ""){
+			alert("빈 값이 있습니다.");
+			return false;
+		}else if(id.length < 6 || id.length > 12){
+			alert("아이디는 6자리 이상 12자리 이하로 작성 가능합니다.");
+			return false;
+		}else if(pw.length < 6 || pw.length > 12){
+			alert("패스워드는 6자리 이상 12자리 이하로 작성 가능합니다.");
+			return false;
+		}else if(email.length < 12){
+			alert("이메일은 최소 12자리 이상 작성해야 합니다.");
+			return false;
+		}else if(id.includes(" ")){
+			alert("아이디에는 공백이 포함될 수 없습니다.");
+			return false;
+		}else if(!email.includes("@") || !email.includes(".")){
+			alert("비정상적인 이메일입니다. @ 또는 .이 포함되어 있지 않습니다.");
+			return false;
+		}else if(phone.length != 11 && phone.length != 13){
+			alert("비정상적인 휴대전화 번호입니다. 11자리 또는 -를 포함해 13자리로 입력해 주세요.");
+			return false;
+		}else if(phone.length == 13 && (phone.charAt(3) != "-" || phone.charAt(8) != "-")){
+			alert("비정상적인 휴대전화 번호입니다. -가 제대로 입력되었는지 확인해 주세요.");
+			return false;
+		}else{
+			alert("회원 가입을 진행하겠습니다.");
+			return true;
+		}
+ 	}
+  		
+ 	function checkId(){
+		var id = document.getElementById("id").value;
+		var result;
+		if(id.length < 6 || id.length > 12){
+			result = "아이디는 6자리 이상 12자리 이하로 작성 가능합니다.";
+		}else if(id.includes(" ")){
+			result = "아이디에는 공백이 포함될 수 없습니다.";
+		}else{
+			result = "아이디 값이 정상입니다! 패스워드 입력 ㄱㄱ";
+		}
+		document.getElementById("myDiv").innerHTML=result;
+	}
+ 	function checkPw(){
+		var pw = document.getElementById("pw").value;
+		var result;
+		if(pw.length < 6 || id.length > 12){
+			result = "패스워드는 6자리 이상 12자리 이하로 작성 가능합니다.";
+		}else{
+			result = "패스워드 값이 정상입니다! 이메일 입력 ㄱㄱ";
+		}
+		document.getElementById("myDiv").innerHTML=result;
+	}
+ 	function checkEmail(){
+		var email = document.getElementById("email").value;
+		var result;
+		if(email.length < 12){
+			result = "이메일은 최소 12자리 이상 작성해야 합니다.";
+		}else if(!email.includes("@") || !email.includes(".")){
+			result = "비정상적인 이메일입니다. @ 또는 .이 포함되어 있지 않습니다.";
+		}else{
+			result = "이메일 값이 정상입니다! 휴대전화 번호 입력 ㄱㄱ";
+		}
+		document.getElementById("myDiv").innerHTML=result;
+	}
+ 	function checkPhone(){
+		var phone = document.getElementById("phone").value;
+		var result;
+	 	if(phone.length < 11 || phone.length == 12 || phone.length > 13){
+			result = "비정상적인 휴대전화 번호입니다. 11자리 또는 -를 포함해 13자리로 입력해 주세요.";
+		}else if(phone.length == 13 && (phone.charAt(3) != "-" || phone.charAt(8) != "-")){
+			result = "비정상적인 휴대전화 번호입니다. -가 제대로 입력되었는지 확인해 주세요.";
+		}else{
+			result = "휴대전화 번호 값이 정상입니다.";
+		}
+		document.getElementById("myDiv").innerHTML=result;
+	}
+ 	
+</script>
+</head>
+<body>
+<!--
+	<h1>버튼 누른 것을 알림창 표시</h1>
+	<input type="text" id="myText" />
+	<button onclick="myFunction()">테스트</button>
+	<br />
+	
+	<h1>입력한 내용 알림창에 표시</h1>
+	<input type="text" id="myText2" />
+	<button onclick="myFunction2()">테스트</button>
+	<br />
+-->
+	<h1>회원 가입</h1>
+	<form action="signUp" method="get" onsubmit="return myFunction3()">
+		ID<input type="text" name="id" id="id" onkeyup="checkId()" /><br />
+		PW<input type="password" name="pw" id="pw" onkeyup="checkPw()" /><br />
+		EMAIL<input type="text" name="email" id="email" onkeyup="checkEmail()"/><br />
+		PHONE<input type="text" name="phone" id="phone" onkeyup="checkPhone()"/><br />
+		<input type="submit" value="회원가입하기" />
+	</form>
+	<div id="myDiv" style="height:100px; width:300px; border:1px solid black"></div>
+</body>
+</html>

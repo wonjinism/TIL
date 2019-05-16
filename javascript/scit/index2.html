@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+</style>
+<script>
+	function inputDiv(){
+		var myText = document.getElementById("myText").value;
+		document.getElementById("myDiv").innerHTML=myText;
+	}
+	
+	
+	var myNum1, myNum2, myResult;
+	function inputValue() {
+		myNum1 = Number(document.getElementById("myNum1").value);
+		myNum2 = Number(document.getElementById("myNum2").value);
+	}
+	function resultValue(myResult){
+		document.getElementById("myResult").innerHTML=myResult;
+	}
+	function add() {
+		inputValue();
+		myResult = myNum1 + " + " + myNum2 + " = " + Number(myNum1 + myNum2);
+		resultValue(myResult);
+	}
+	function subtract() {
+		inputValue();
+		myResult = myNum1 + " - " + myNum2 + " = " + Number(myNum1 - myNum2);
+		resultValue(myResult);
+	}
+	function multiply() {
+		inputValue();
+		myResult = myNum1 + " * " + myNum2 + " = " + Number(myNum1 * myNum2);
+		resultValue(myResult);
+	}
+	function divide() {
+		inputValue();
+		myResult = myNum1 + " / " + myNum2 + " = " + Number(myNum1 / myNum2);
+		resultValue(myResult);
+	}
+
+</script>
+</head>
+<body>
+	<div id="myDiv" style="height:100px; width:300px; border:1px solid black"></div>
+	댓글 : <input type="text" id="myText" onkeyup="inputDiv()"/>
+
+	<br />
+	<br /> 첫 번째 숫자:
+	<input type="text" id="myNum1">
+	<br /> 두 번째 숫자:
+	<input type="text" id="myNum2">
+	<br />
+	<button onclick="add()">덧셈</button>
+	<button onclick="subtract()">뺄셈</button>
+	<button onclick="multiply()">곱셈</button>
+	<button onclick="divide()">나눗셈</button>
+	<div id="myResult" style="height:100px; width:300px; border:1px solid black"></div>
+	
+</body>
+</html>

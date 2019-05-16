@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+    <title>Carousel using bxSlider.js and Owl Carousel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <style>
+      #wrapper {
+        width: 600px;
+        margin: 0 auto;
+      }
+    </style>
+    <script>
+      $(function(){
+        $(".bxslider").bxSlider({
+          slideWidth: 600,
+          captions: true,
+          auto: true,
+          autoControls: true,
+          stopAutoOnclick: true
+        });
+        $(".owl-carousel").owlCarousel({
+          items: 3,
+          margin: 10,
+          loop: true,
+          autoplay: true,
+          autoplayTimeout: 3000,
+          autoplayHoverPause: true,
+          nav: true,
+          navText:["이전", "다음"]    
+        });
+      });
+    </script>
+		<!--[if lt IE 9]>
+		  <script src="js/html5shiv.min.js"></script>
+		<![endif]-->		
+	</head>
+	<body>
+    <div id="wrapper">
+      <div class="bxslider">
+        <div>
+          <img src="images/things-1.jpeg" title="image 1">
+        </div>
+        <div>
+          <img src="images/things-2.jpeg" title="image 2">
+        </div>
+        <div>
+          <img src="images/things-3.jpeg" title="image 3">
+        </div>         
+        <div>
+            <img src="images/things-4.jpeg" title="image 4">
+        </div>            
+      </div>
+    </div>
+    <div id="wrapper_2">
+      <div class="owl-carousel owl-theme">
+        <div class="item"><img src="images/puppy-1.jpeg" alt=""></div>
+        <div class="item"><img src="images/puppy-2.jpeg" alt=""></div>
+        <div class="item"><img src="images/puppy-3.jpeg" alt=""></div>
+        <div class="item"><img src="images/kitten-1.jpeg" alt=""></div>
+        <div class="item"><img src="images/kitten-2.jpeg" alt=""></div>
+        <div class="item"><img src="images/kitten-3.jpeg" alt=""></div>
+      </div>
+    </div>
+  </body>
+</html>

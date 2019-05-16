@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// 	var ssn = "111111-1111111";
+// 	console.log(ssn.length);
+// 	console.log(!isNaN(ssn));
+// 	console.log(ssn.substr(0, 6));
+// 	console.log(!isNaN(ssn.substr(0, 6)));
+// 	console.log(ssn.substr(7));
+// 	console.log(!isNaN(ssn.substr(7)));
+	function check(){
+		// id로 form element에 접근해서 submit 실행
+		// document.getElementById("myForm").submit();
+		
+		// name으로 Element에 접근하는 방법
+		// document.myForm.submit();
+		
+		var id = document.myForm.id.value;
+		var ssn = document.myForm.ssn.value;
+		
+		if(id == ""){
+			alert("ID칸이 비어 있습니다.");
+			document.myForm.id.focus();
+			return;
+		}else if(id.indexOf(" ")!=-1){
+			alert("ID칸에 띄어쓰기는 입력할 수 없습니다.")
+			document.myForm.id.focus();
+		}
+
+		if(!(ssn.length == 13 || ssn.length == 14)){
+			alert("주민등록번호 자릿수가 맞지 않습니다.");
+			document.myForm.ssn.focus();
+			return;
+		}else if(!(ssn.length == 13 && !isNaN(ssn)) && !(ssn.length == 14 && !isNaN(ssn.substr(0, 6)) && !isNaN(ssn.substr(7)))){
+			alert("주민등록번호는 가운데 -를 제외하고 숫자로만 입력되어야 합니다.");
+			document.myForm.ssn.focus();
+			return;
+		}else{
+			var gender; 
+			if(ssn.length == 13){
+				gender = ssn.substr(6, 1);
+			} else if(ssn.length == 14){
+				gender = ssn.substr(7, 1);
+			}
+			switch (gender) {
+			case "1":
+			case "3":
+				alert("남성이군요!");
+				document.myForm.gender.value = "male";
+				break;
+			case "2": 
+			case "4":
+				alert("여성이군요!");
+				document.myForm.gender.value = "female";
+				break;
+			default:
+				alert("주민등록 번호를 잘못 입력했습니다.")
+				break;
+			}
+			return;
+		}
+		document.myForm.submit();
+	}
+</script>
+</head>
+<body>
+	<h1>회원 가입</h1>
+	<form class="myform" action="signUp" method="get" name="myForm" id="myForm">
+		ID<input type="text" name="id" id="id" /><br />
+		PW<input type="password" name="pw" id="pw" /><br />
+		EMAIL<input type="text" name="email" id="email" /><br />
+		PHONE<input type="text" name="phone" id="phone" /><br />
+		주민번호<input type="text" name="ssn" id="ssn" /><br />
+		<input type="hidden" name="gender" /> 
+	</form>
+	<button onclick="check()">가입하기</button>
+</body>
+</html>

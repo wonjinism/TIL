@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>연습문제</title>
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
+	<link rel="stylesheet" href="css/input.css">
+	<link rel="stylesheet" href="css/list.css">
+	<style>
+			body {
+				font-family:'Nanum Pen Script', "맑은 고딕";
+				padding-top:20px;
+				font-size:2.5em;
+				text-align: center;
+			}
+		</style>
+</head>
+<body>
+	<div id="wrapper">
+			<h2>좋은 글 좋은 생각</h2>
+			<form>
+				<input type="text" id="item" autofocus="true" />
+				<button type="button" id="add" class="addBtn">추가</button>
+				<button type="button" id="random">랜덤 보기</button> 
+			</form>
+			<div id="itemList"></div>
+		</div>
+	<script>
+		var itemList = [];
+		document.querySelector('#add').addEventListener('click', addList);
+		document.querySelector('#random').addEventListener('click', showItem);
+		function addList() {
+			var item = document.querySelector('#item').value;
+			if (item != null && item.trim() != "") {
+				itemList.push(item);
+				alert('입력 되었습니다');
+				document.querySelector('#item').value = '';
+				document.querySelector('#item').focus();
+			} else if(item.trim() == "") {
+				alert('준비물을 입력해 주세요!');
+				document.querySelector('#item').focus();
+			}
+		}
+
+		function showItem() {
+			var item = '<ul><li>' + itemList[Math.floor(Math.random() * itemList.length)] + '</li></ul>';
+			document.querySelector('#itemList').innerHTML = item;
+		}
+		
+	</script>
+</body>
+</html>

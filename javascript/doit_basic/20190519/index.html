@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>To do list</title>
+	<link rel="stylesheet" href="css/input.css">
+	<link rel="stylesheet" href="css/list.css">
+</head>
+<body>
+	<div id="wrapper">
+		<h2>여행 준비물 점검 목록</h2>
+		<form>
+			<input type="text" id="item" autofocus="true" />
+			<button type="button" id="add" class="addBtn">추가</button>
+		</form>
+		<div id="itemList"></div>
+	</div>
+	<script>
+		var itemList = [];
+		document.querySelector('#add').addEventListener('click', addList);
+
+		function addList() {
+			var item = document.querySelector('#item').value;
+			if (item != null && item.trim() != "") {
+				itemList.push(item);
+				alert('입력 되었습니다');
+				document.querySelector('#item').value = '';
+				document.querySelector('#item').focus();
+				showList();
+			} else if(item.trim() == "") {
+				alert('준비물을 입력해 주세요!');
+				document.querySelector('#item').focus();
+			}
+		}
+
+		function showList() {
+			var list = '<ul>';
+			for (let index = 0; index < itemList.length; index++) {
+				list += '<li>' + itemList[index] + '<span class="close" id="' + index + '">X</span></li>';
+			}
+			list += '</ul>';
+			document.querySelector('#itemList').innerHTML = list;
+			var closeBtn = document.querySelectorAll('.close');
+			if(closeBtn != null) {
+				closeBtn.forEach(btn => {
+					btn.addEventListener('click', removeList);
+				});
+			}
+		}
+
+		function removeList(){
+			itemList.splice(this.getAttribute('id'), 1);
+			showList();
+		}
+
+
+	</script>
+</body>
+</html>

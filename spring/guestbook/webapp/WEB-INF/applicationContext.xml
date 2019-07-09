@@ -36,7 +36,7 @@
 		<property name="dataSource" ref="dataSource" />
 
 		<!-- @Entity 탐색 범위 -->
-		<property name="packagesToScan" value="com.victolee.guestbook.domain" />
+		<property name="packagesToScan" value="io.zerone.guestbook.domain" />
 
 		<!-- 하이버네이트 구현체 사용 -->
 		<property name="jpaVendorAdapter">
@@ -73,7 +73,7 @@
 		<property name="password" value="jpadb" />
 	</bean>
 
-	<context:component-scan base-package="com.victolee.guestbook.service, com.victolee.guestbook.repository">
+	<context:component-scan base-package="io.zerone.guestbook.service, io.zerone.guestbook.repository">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Component" />

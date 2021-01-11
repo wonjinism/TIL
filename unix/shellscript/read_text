@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+# while
+# read
+# cat ./resource/colors.txt | ./read_text
+
+i=1
+while read line; do
+	echo $i "$line"
+	((i++))
+done

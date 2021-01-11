@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+# operation
+
+echo 5+2 # 5+2
+echo `expr 5 + 2` # 7
+echo $((5 + 2)) # 7
+
+n=5
+(($n=$n+5)) # error
+((n=n+5))
+echo $n
+
+
+# + - * / % ** ++ --
+
+echo $((10 / 3)) # 3 -> integer only

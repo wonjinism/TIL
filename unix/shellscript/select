@@ -1,0 +1,21 @@
+#!/usr/bin/bash
+# select
+
+select color in red blue yellow green; do
+	case "$color" in
+		red)
+			echo "stop"
+			;;
+		blue|green)
+			echo "go"
+			;;
+		yellow)
+			echo "caution"
+			;;
+		*)
+			echo "no siginal"
+			break
+	esac
+done
+
+

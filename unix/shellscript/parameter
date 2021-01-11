@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+# $1, $2, ...
+# echo "hello $1"
+
+# ./parameter a aa aaa
+echo $0 # ./parameter
+echo $# # 3 -> parameter count
+echo $@ # $* a aa aaa

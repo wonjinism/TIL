@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+# comment
+
+echo "hello world"
+# echo "hello world"
+echo "hello simon"
+
+
+# variable
+
+# wrong case -> name = "simon"
+
+name="simon"
+
+readonly name2="sonya"
+echo "hello $name2"
+name2="sonya2"
+
+echo "morning $name"
+echo "my name is $name"
+echo "bye ${name}!"
+echo 'bye ${name}!'
+

@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+# if
+# [[]] -> text, filename
+# (()) -> number
+
+read -p "Name? " name
+# if test "$name" = "simon"
+# if [ "$name" = "simon" ] 
+if [[ $name = "simon" ]]
+then
+	echo "welcome"
+elif [ "$name" = "sonya" ]; then echo "hello!"
+else
+	echo "you are not the member"
+fi
+
+# = == != -z =~
+if [[ $name = "simon" ]]; then echo "hello2!"
+elif [[ -z $name ]]; then echo "empty.."
+elif [[ $name =~ ^k ]]; then echo "hello, King??"
+else echo ""
+fi

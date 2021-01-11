@@ -1,0 +1,21 @@
+#!/usr/bin/bash
+# function
+# exit code
+
+#function hello() {
+hello() {
+	echo "hello... $1"	
+	familyName="kim"
+	local surnName="kim"
+	
+	if [[ $1 == "simon" ]]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+hello simon; echo $?
+hello sonya; echo $? 
+echo $familyName # kim
+echo $surnName # no answer

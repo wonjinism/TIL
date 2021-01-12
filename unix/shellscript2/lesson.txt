@@ -1,0 +1,3 @@
+#return the path of bash
+which bash
+echo $SHELL
